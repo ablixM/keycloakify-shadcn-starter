@@ -3,7 +3,7 @@ import type {
     FormAction,
     FormFieldError
 } from "@keycloakify/login-ui/useUserProfileForm";
-import { PasswordVisibilityButton } from "../PasswordWrapper";
+import { PasswordVisibilityButton } from "../PasswordVisibilityButton";
 import { InputTag } from "./InputTag";
 import { InputTagSelects } from "./InputTagSelects";
 import { SelectTag } from "./SelectTag";

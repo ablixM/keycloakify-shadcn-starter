@@ -10,7 +10,7 @@ import { useKcClsx } from "@keycloakify/login-ui/useKcClsx";
 import { Fingerprint } from "lucide-react";
 import { useState } from "react";
 import { assert } from "tsafe/assert";
-import { PasswordVisibilityButton } from "../../components/PasswordWrapper";
+import { PasswordVisibilityButton } from "../../components/PasswordVisibilityButton";
 import { useI18n } from "../../i18n";
 import { useScript } from "./useScript";
 
