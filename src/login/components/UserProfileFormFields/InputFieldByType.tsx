@@ -1,13 +1,14 @@
+import { InputGroup, InputGroupAddon } from '@/components/ui/input-group';
 import type { Attribute } from "@keycloakify/login-ui/KcContext";
 import type {
     FormAction,
     FormFieldError
 } from "@keycloakify/login-ui/useUserProfileForm";
-import { PasswordVisibilityButton } from "../PasswordVisibilityButton";
 import { InputTag } from "./InputTag";
 import { InputTagSelects } from "./InputTagSelects";
 import { SelectTag } from "./SelectTag";
 import { TextareaTag } from "./TextareaTag";
+import { PasswordVisibilityButton } from '../PasswordVisibilityButton';
 
 export type InputFieldByTypeProps = {
     attribute: Attribute;
@@ -50,17 +51,19 @@ export function InputFieldByType(props: InputFieldByTypeProps) {
                 );
             }
 
-            const inputNode = <InputTag {...props} fieldIndex={undefined} />;
 
             if (attribute.name === "password" || attribute.name === "password-confirm") {
                 return (
-                    <PasswordVisibilityButton passwordInputId={attribute.name}>
-                        {inputNode}
-                    </PasswordVisibilityButton>
+                    <InputGroup>
+                        <InputTag {...props} fieldIndex={undefined} isInGroup={true} />
+                        <InputGroupAddon align="inline-end">
+                            <PasswordVisibilityButton passwordInputId={attribute.name} />
+                        </InputGroupAddon>
+                    </InputGroup>
                 );
             }
 
-            return inputNode;
+            return <InputTag {...props} fieldIndex={undefined} />;
         }
     }
 }
