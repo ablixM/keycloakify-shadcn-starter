@@ -25,6 +25,7 @@ export function Page() {
         login,
         registrationDisabled,
         messagesPerField,
+        enableWebAuthnConditionalUI,
     } = kcContext;
 
     const { msg, msgStr } = useI18n();
@@ -125,7 +126,7 @@ export function Page() {
                                     name="username"
                                     autoFocus
                                     className="autofill:bg-background"
-                                    autoComplete="username"
+                                    autoComplete={enableWebAuthnConditionalUI ? "username webauthn" : "username"}
                                     aria-invalid={messagesPerField.existsError(
                                         "username"
                                     )}

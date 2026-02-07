@@ -55,7 +55,7 @@ export function Form() {
                                         defaultValue={kcContext.login.username ?? ""}
                                         name="username"
                                         autoFocus
-                                        autoComplete="username"
+                                        autoComplete={kcContext.enableWebAuthnConditionalUI ? "username webauthn" : "username"}
                                         aria-invalid={kcContext.messagesPerField.existsError(
                                             "username",
                                             "password"
