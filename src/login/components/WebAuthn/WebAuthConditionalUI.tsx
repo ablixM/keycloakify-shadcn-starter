@@ -5,7 +5,7 @@ import { assert } from "tsafe/assert";
 import { useI18n } from '../../i18n';
 import { useKcContext } from '../../KcContext';
 import { usePasskeysConditionalAuth } from './usePasskeysConditionalAuth';
-import { useWebAuthn, type WebAuthnResult } from './useWebAuthn';
+import { useWebAuthn, type AuthenticateOptions, type WebAuthnResult } from './useWebAuthn';
 
 
 export function WebAuthnConditionalUI() {
@@ -46,7 +46,7 @@ export function WebAuthnConditionalUI() {
     };
 
     // Common Config
-    const authOptions = {
+    const authOptions: AuthenticateOptions = {
         isUserIdentified: kcContext.isUserIdentified === "true",
         challenge: kcContext.challenge,
         userVerification: kcContext.userVerification,

@@ -1,5 +1,6 @@
-import { useCallback, useRef } from "react";
+import { useCallback } from "react";
 import { base64url } from "rfc4648";
+import { getWebAuthnSignal } from "./webAuthnAbortController";
 
 // see https://github.com/keycloak/keycloak/blob/main/themes/src/main/resources/theme/base/login/resources/js/webauthnAuthenticate.js
 
@@ -67,8 +68,6 @@ export type WebAuthnResult =
       };
 
 export function useWebAuthn() {
-    const abortControllerRef = useRef<AbortController | null>(null);
-
     const authenticate = useCallback(
         async (options: AuthenticateOptions): Promise<WebAuthnResult | null> => {
             const {
@@ -86,14 +85,6 @@ export function useWebAuthn() {
             if (!window.PublicKeyCredential) {
                 return { success: false, error: errmsg || "WebAuthn not supported" };
             }
-
-            //  Abort Controller
-            if (abortControllerRef.current) {
-                abortControllerRef.current.abort(
-                    new Error("Cancelling pending WebAuthn call")
-                );
-            }
-            abortControllerRef.current = new AbortController();
 
             // Prepare Configuration
             const publicKey: PublicKeyCredentialRequestOptions = {
@@ -122,7 +113,7 @@ export function useWebAuthn() {
             try {
                 const credential = (await navigator.credentials.get({
                     publicKey,
-                    signal: abortControllerRef.current.signal,
+                    signal: getWebAuthnSignal(),
                     mediation
                 })) as PublicKeyCredential;
 
@@ -151,7 +142,6 @@ export function useWebAuthn() {
                 };
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } catch (error: any) {
-                console.log("WebAuthn error", error);
                 if (error.name === "AbortError") return null;
                 return {
                     success: false,
