@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/login/components/ui/ThemeProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import type { ClassKey } from "@keycloakify/login-ui/useKcClsx";
 import type { ReactNode } from "react";
 import "./index.css";

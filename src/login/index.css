@@ -1,6 +1,7 @@
 @import url(./assets/fonts/inter/inter.css) layer(base);
 
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @source "../**/*.{ts,tsx}";
 
