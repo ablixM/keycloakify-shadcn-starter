@@ -17,6 +17,12 @@ export default defineConfig({
                 "22-to-25": false,
                 "all-other-versions": "acme-theme.jar"
             },
+            environmentVariables: [
+                { name: "SHADECN_THEME_LOGO_URL", default: "" },
+                { name: "SHADECN_THEME_APP_NAME", default: "Acme Inc." },
+                { name: "SHADECN_THEME_LAYOUT", default: "image-aside" },
+                { name: "SHADECN_THEME_SIDE_IMAGE_URL", default: "" }
+            ],
             postBuild: async buildContext => {
                 await buildEmailTheme({
                     templatesSrcDirPath: path.join(

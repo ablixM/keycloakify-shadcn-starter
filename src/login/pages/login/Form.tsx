@@ -43,10 +43,10 @@ export function Form() {
                                 <Field>
                                     <FieldLabel htmlFor="username">
                                         {!kcContext.realm.loginWithEmailAllowed
-                                            ? msg("email")
+                                            ? msg("username")
                                             : !kcContext.realm.registrationEmailAsUsername
                                                 ? msg("usernameOrEmail")
-                                                : msg("username")}
+                                                : msg("email")}
                                     </FieldLabel>
                                     <Input
                                         tabIndex={2}
