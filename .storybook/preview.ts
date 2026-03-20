@@ -1,10 +1,14 @@
 import type { Preview } from "@storybook/react-vite";
 import { createElement } from "react";
+
 import {
     DEFAULT_FONT,
     DEFAULT_LOCALE,
     DEFAULT_THEME_BASE,
     DEFAULT_THEME_LAYOUT,
+    DEFAULT_THEME_LOGO_DARK_URL,
+    DEFAULT_THEME_LOGO_WHITE_URL,
+    DEFAULT_THEME_PLACEHOLDER,
     DEFAULT_THEME_PRESET,
     DEFAULT_THEME_RADIUS
 } from "../src/login/components/Template/Defaults";
@@ -15,6 +19,28 @@ import {
 } from "../src/login/components/Template/theme/ThemeTypes";
 
 const preview: Preview = {
+    args: {
+        logoWhiteUrl: "",
+        logoDarkUrl: "",
+        sideImageUrl: ""
+    },
+    argTypes: {
+        logoWhiteUrl: {
+            name: "Logo (Light)",
+            control: "text",
+            description: "Logo URL used in light mode"
+        },
+        logoDarkUrl: {
+            name: "Logo (Dark)",
+            control: "text",
+            description: "Logo URL used in dark mode"
+        },
+        sideImageUrl: {
+            name: "Side Image",
+            control: "text",
+            description: "Side image URL used in two-column layout"
+        }
+    },
     parameters: {
         controls: {
             matchers: {
@@ -143,8 +169,16 @@ const preview: Preview = {
             const themeRadius = String(
                 context.globals.themeRadius ?? DEFAULT_THEME_RADIUS
             );
-            const showPlaceholder = String(context.globals.showPlaceholder ?? "true");
+            const showPlaceholder = String(
+                context.globals.showPlaceholder ?? DEFAULT_THEME_PLACEHOLDER
+            );
             const font = String(context.globals.themeFont ?? DEFAULT_FONT);
+            const logoWhiteUrl = String(
+                context.args.logoWhiteUrl ?? DEFAULT_THEME_LOGO_WHITE_URL
+            );
+            const logoDarkUrl = String(
+                context.args.logoDarkUrl ?? DEFAULT_THEME_LOGO_DARK_URL
+            );
 
             const storyArgs = {
                 ...context.args,
@@ -156,6 +190,8 @@ const preview: Preview = {
                     },
                     properties: {
                         ...context.args.kcContext?.properties,
+                        SHADCN_THEME_LOGO_WHITE_URL: logoWhiteUrl,
+                        SHADCN_THEME_LOGO_DARK_URL: logoDarkUrl,
                         SHADCN_THEME_LAYOUT: layout,
                         SHADCN_THEME_PRESET: themePreset,
                         SHADCN_THEME_BASE: themeBase,

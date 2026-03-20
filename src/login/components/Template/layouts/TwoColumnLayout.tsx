@@ -34,7 +34,7 @@ export function TwoColumnLayout(props: {
 
                     <div className="relative z-10 flex max-w-xs flex-col items-center justify-center text-center">
                         <div className="mb-4 flex items-center gap-3">
-                            <img src={appLogo} alt="Logo" />
+                            <img src={appLogo} alt="Logo" className='size-14' />
                             <span className="text-xl text-white">{appName}</span>
                         </div>
 

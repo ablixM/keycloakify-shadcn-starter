@@ -35,7 +35,8 @@ export function Template(props: TemplateProps) {
     const { kcClsx } = useKcClsx();
 
     const appName = kcContext.properties.SHADCN_THEME_APP_NAME;
-    const appLogo = kcContext.properties.SHADCN_THEME_LOGO_URL || companylogo;
+    const appWhiteModeLogo = kcContext.properties.SHADCN_THEME_LOGO_WHITE_URL || companylogo;
+    const appDarkModeLogo = kcContext.properties.SHADCN_THEME_LOGO_DARK_URL || companylogo;
     const layout = kcContext.properties.SHADCN_THEME_LAYOUT;
 
     const sideImageUrl =
@@ -67,7 +68,8 @@ export function Template(props: TemplateProps) {
                     content={
                         <TemplateContent
                             {...props}
-                            appLogo={appLogo}
+                            appWhiteModeLogo={appWhiteModeLogo}
+                            appDarkModeLogo={appDarkModeLogo}
                             appName={appName}
                             cardClassName="border bg-card shadow-sm"
                         />
@@ -80,7 +82,8 @@ export function Template(props: TemplateProps) {
                     content={
                         <TemplateContent
                             {...props}
-                            appLogo={appLogo}
+                            appWhiteModeLogo={appWhiteModeLogo}
+                            appDarkModeLogo={appDarkModeLogo}
                             appName={appName}
                             brandingVisibilityClassName="md:hidden"
                             cardClassName="border-none bg-transparent shadow-sm h-full"
@@ -96,13 +99,14 @@ export function Template(props: TemplateProps) {
                     content={
                         <TemplateContent
                             {...props}
-                            appLogo={appLogo}
+                            appWhiteModeLogo={appWhiteModeLogo}
+                            appDarkModeLogo={appDarkModeLogo}
                             appName={appName}
                             brandingVisibilityClassName="lg:hidden"
                             cardClassName="border-0 shadow-none bg-transparent md:border md:bg-card md:shadow-sm"
                         />
                     }
-                    appLogo={appLogo}
+                    appLogo={appDarkModeLogo}
                     appName={appName}
                 />
             );

@@ -18,7 +18,8 @@ import type { TemplateProps } from "./Template";
 
 type TemplateContentProps = TemplateProps & {
     appName: string;
-    appLogo: string;
+    appWhiteModeLogo: string;
+    appDarkModeLogo: string;
     cardClassName?: string;
     brandingVisibilityClassName?: string;
 };
@@ -33,7 +34,8 @@ export function TemplateContent(props: TemplateContentProps) {
         infoNode = null,
         children,
         appName,
-        appLogo,
+        appWhiteModeLogo,
+        appDarkModeLogo,
         cardClassName,
         brandingVisibilityClassName
     } = props;
@@ -89,8 +91,9 @@ export function TemplateContent(props: TemplateContentProps) {
                         brandingVisibilityClassName
                     )}
                 >
-                    <div className="flex items-center gap-3 mb-4">
-                        <img src={appLogo} alt="Logo" />
+                    <div className="flex items-center gap-3 mb-4 ">
+                        <img src={appWhiteModeLogo} alt="Logo" className='size-14 dark:hidden' />
+                        <img src={appDarkModeLogo} alt="Logo" className='size-14 hidden dark:inline-block' />
                         <span className="text-xl">{appName}</span>
                     </div>
                 </div>
