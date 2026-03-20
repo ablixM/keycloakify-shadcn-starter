@@ -65,7 +65,7 @@ const preview: Preview = {
         layout: {
             name: "Layout",
             description: "Keycloak layout",
-            defaultValue: "centered-card",
+            defaultValue: "two-column",
             toolbar: {
                 icon: "mirror",
                 items: ["two-column", "centered-card", "image-aside"]
@@ -114,7 +114,7 @@ const preview: Preview = {
         themePreset: {
             name: "Theme",
             description: "Keycloak theme preset",
-            defaultValue: "indigo",
+            defaultValue: "neutral",
             toolbar: {
                 icon: "paintbrush",
                 items: [...themePresetOptions]
@@ -141,7 +141,7 @@ const preview: Preview = {
         themeFont: {
             name: "Font",
             description: "Theme font preset",
-            defaultValue: "inter",
+            defaultValue: "geist",
             toolbar: {
                 icon: "paragraph",
                 items: [
