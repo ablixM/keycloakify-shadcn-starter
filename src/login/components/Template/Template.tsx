@@ -9,6 +9,7 @@ import { CenteredCardLayout } from "./layouts/CenteredCardLayout";
 import { ImageAsideLayout } from "./layouts/ImageAsideLayout";
 import { TwoColumnLayout } from "./layouts/TwoColumnLayout";
 import { TemplateContent } from "./TemplateContent";
+import { useApplyThemePreset } from "./theme/useApplyThemePreset";
 import { useInitializeTemplate } from "./useInitializeTemplate";
 
 
@@ -33,12 +34,12 @@ export function Template(props: TemplateProps) {
     const { msgStr } = useI18n();
     const { kcClsx } = useKcClsx();
 
-    const appName = kcContext.properties.SHADECN_THEME_APP_NAME;
-    const appLogo = kcContext.properties.SHADECN_THEME_LOGO_URL || companylogo;
-    const layout = kcContext.properties.SHADECN_THEME_LAYOUT;
+    const appName = kcContext.properties.SHADCN_THEME_APP_NAME;
+    const appLogo = kcContext.properties.SHADCN_THEME_LOGO_URL || companylogo;
+    const layout = kcContext.properties.SHADCN_THEME_LAYOUT;
 
     const sideImageUrl =
-        kcContext.properties.SHADECN_THEME_SIDE_IMAGE_URL || undefined;
+        kcContext.properties.SHADCN_THEME_SIDE_IMAGE_URL || undefined;
 
     useEffect(() => {
         document.title =
@@ -57,6 +58,7 @@ export function Template(props: TemplateProps) {
     });
 
     useInitializeTemplate();
+    useApplyThemePreset();
 
     switch (layout) {
         case "centered-card":
@@ -81,8 +83,7 @@ export function Template(props: TemplateProps) {
                             appLogo={appLogo}
                             appName={appName}
                             brandingVisibilityClassName="md:hidden"
-                            cardClassName="border bg-card shadow-sm"
-                        // cardClassName={"rounded-t-2xl border-0 bg-transparent shadow-none md:rounded-lg md:border md:bg-card md:shadow-sm"}
+                            cardClassName="border-none bg-transparent shadow-sm h-full"
                         />
                     }
                     imageUrl={sideImageUrl}
@@ -98,7 +99,7 @@ export function Template(props: TemplateProps) {
                             appLogo={appLogo}
                             appName={appName}
                             brandingVisibilityClassName="lg:hidden"
-                            cardClassName="border-none shadow-none bg-transparent lg:border lg:bg-card lg:shadow-sm"
+                            cardClassName="border-0 shadow-none bg-transparent md:border md:bg-card md:shadow-sm"
                         />
                     }
                     appLogo={appLogo}

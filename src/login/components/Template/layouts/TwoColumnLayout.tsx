@@ -14,16 +14,16 @@ export function TwoColumnLayout(props: {
 
 
     return (
-        <div className="grid min-h-svh lg:grid-cols-2">
+        <div className="grid min-h-svh lg:grid-cols-2 ">
             <div className="relative flex min-h-screen flex-col pb-6 lg:min-h-0 lg:p-6 lg:pt-10">
                 <TemplateTopBar />
 
-                <div className="flex flex-1 items-center justify-center lg:items-center">
+                <div className="flex flex-1 items-center justify-center lg:items-center p-6 md:p-10">
                     <div className="w-full max-w-xl">{content}</div>
                 </div>
             </div>
 
-            <div className="bg-primary relative hidden h-full overflow-hidden lg:block dark:bg-white/5">
+            <div className="bg-slate-950  relative hidden h-full overflow-hidden lg:block dark:bg-card">
                 <div className="flex h-full items-center justify-center pt-20">
                     <div className="absolute right-0 top-0 w-full max-w-62.5 xl:max-w-112.5">
                         <img src={shape} alt="" />

@@ -22,6 +22,8 @@ export function Form() {
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 
+    const showPlaceholder = kcContext.properties.SHADCN_THEME_PLACEHOLDER === "true";
+
     const { kcClsx } = useKcClsx();
 
     return (
@@ -55,6 +57,12 @@ export function Form() {
                                         defaultValue={kcContext.login.username ?? ""}
                                         name="username"
                                         autoFocus
+                                        placeholder={showPlaceholder ?
+                                            !kcContext.realm.loginWithEmailAllowed
+                                                ? msgStr("usernamePlaceholder")
+                                                : !kcContext.realm.registrationEmailAsUsername
+                                                    ? msgStr("usernameOrEmailPlaceholder")
+                                                    : msgStr("emailPlaceholder") : undefined}
                                         autoComplete={kcContext.enableWebAuthnConditionalUI ? "username webauthn" : "username"}
                                         aria-invalid={kcContext.messagesPerField.existsError(
                                             "username",
@@ -94,6 +102,7 @@ export function Form() {
                                         id="password"
                                         name="password"
                                         autoComplete="current-password"
+                                        placeholder={showPlaceholder ? msgStr("passwordPlaceholder") : undefined}
                                         aria-invalid={kcContext.messagesPerField.existsError(
                                             "username",
                                             "password"

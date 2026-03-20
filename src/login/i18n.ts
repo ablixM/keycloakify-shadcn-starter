@@ -14,7 +14,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Sign up",
             "organization.selectTitle": "Choose Your Organization",
             "organization.pickPlaceholder": "Pick an organization to continue",
-            "identity-provider-login-last-used": "Last used"
+            "identity-provider-login-last-used": "Last used",
+            usernamePlaceholder: "Enter your username",
+            usernameOrEmailPlaceholder: "Enter your username or email",
+            emailPlaceholder: "Enter your email",
+            passwordPlaceholder: "Enter your password",
+            newPasswordPlaceholder: "Enter your new password",
+            confirmPasswordPlaceholder: "Confirm your password"
         },
         ar: {
             welcomeMessage: "مرحبًا بك في Acme inc - بوابتك إلى التخطيط والتنظيم السلس.",
@@ -24,7 +30,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             noAccount: "ليس لديك حساب؟",
             "organization.selectTitle": "اختر مؤسستك",
             "organization.pickPlaceholder": "اختر مؤسسة للمتابعة",
-            "identity-provider-login-last-used": "آخر استخدام"
+            "identity-provider-login-last-used": "آخر استخدام",
+            usernamePlaceholder: "أدخل اسم المستخدم",
+            usernameOrEmailPlaceholder: "أدخل اسم المستخدم أو البريد الإلكتروني",
+            emailPlaceholder: "أدخل بريدك الإلكتروني",
+            passwordPlaceholder: "أدخل كلمة المرور",
+            newPasswordPlaceholder: "أدخل كلمة المرور الجديدة",
+            confirmPasswordPlaceholder: "أكد كلمة المرور"
         },
         ca: {
             welcomeMessage:
@@ -35,7 +47,14 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Registra't",
             "organization.selectTitle": "Trieu la vostra organització",
             "organization.pickPlaceholder": "Trieu una organització per continuar",
-            "identity-provider-login-last-used": "Últim ús"
+            "identity-provider-login-last-used": "Últim ús",
+            usernamePlaceholder: "Introduïu el vostre nom d'usuari",
+            usernameOrEmailPlaceholder:
+                "Introduïu el vostre nom d'usuari o correu electrònic",
+            emailPlaceholder: "Introduïu el vostre correu electrònic",
+            passwordPlaceholder: "Introduïu la vostra contrasenya",
+            newPasswordPlaceholder: "Introduïu la vostra nova contrasenya",
+            confirmPasswordPlaceholder: "Confirmeu la vostra contrasenya"
         },
         cs: {
             welcomeMessage:
@@ -46,7 +65,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Zaregistrovat se",
             "organization.selectTitle": "Vyberte svou organizaci",
             "organization.pickPlaceholder": "Pokračujte výběrem organizace",
-            "identity-provider-login-last-used": "Naposledy použito"
+            "identity-provider-login-last-used": "Naposledy použito",
+            usernamePlaceholder: "Zadejte své uživatelské jméno",
+            usernameOrEmailPlaceholder: "Zadejte své uživatelské jméno nebo e-mail",
+            emailPlaceholder: "Zadejte svůj e-mail",
+            passwordPlaceholder: "Zadejte své heslo",
+            newPasswordPlaceholder: "Zadejte své nové heslo",
+            confirmPasswordPlaceholder: "Potvrďte své heslo"
         },
         da: {
             welcomeMessage:
@@ -57,7 +82,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Tilmeld dig",
             "organization.selectTitle": "Vælg din organisation",
             "organization.pickPlaceholder": "Vælg en organisation for at fortsætte",
-            "identity-provider-login-last-used": "Sidst brugt"
+            "identity-provider-login-last-used": "Sidst brugt",
+            usernamePlaceholder: "Indtast dit brugernavn",
+            usernameOrEmailPlaceholder: "Indtast dit brugernavn eller din e-mail",
+            emailPlaceholder: "Indtast din e-mail",
+            passwordPlaceholder: "Indtast din adgangskode",
+            newPasswordPlaceholder: "Indtast din nye adgangskode",
+            confirmPasswordPlaceholder: "Bekræft din adgangskode"
         },
         de: {
             welcomeMessage:
@@ -69,7 +100,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             "organization.selectTitle": "Wählen Sie Ihre Organisation",
             "organization.pickPlaceholder":
                 "Wählen Sie eine Organisation aus, um fortzufahren",
-            "identity-provider-login-last-used": "Zuletzt verwendet"
+            "identity-provider-login-last-used": "Zuletzt verwendet",
+            usernamePlaceholder: "Benutzernamen eingeben",
+            usernameOrEmailPlaceholder: "Benutzernamen oder E-Mail eingeben",
+            emailPlaceholder: "E-Mail-Adresse eingeben",
+            passwordPlaceholder: "Passwort eingeben",
+            newPasswordPlaceholder: "Neues Passwort eingeben",
+            confirmPasswordPlaceholder: "Passwort bestätigen"
         },
         el: {
             welcomeMessage:
@@ -80,7 +117,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Εγγραφείτε",
             "organization.selectTitle": "Επιλέξτε τον οργανισμό σας",
             "organization.pickPlaceholder": "Επιλέξτε έναν οργανισμό για να συνεχίσετε",
-            "identity-provider-login-last-used": "Χρησιμοποιήθηκε τελευταία"
+            "identity-provider-login-last-used": "Χρησιμοποιήθηκε τελευταία",
+            usernamePlaceholder: "Εισαγάγετε το όνομα χρήστη σας",
+            usernameOrEmailPlaceholder: "Εισαγάγετε το όνομα χρήστη ή το email σας",
+            emailPlaceholder: "Εισαγάγετε το email σας",
+            passwordPlaceholder: "Εισαγάγετε τον κωδικό πρόσβασής σας",
+            newPasswordPlaceholder: "Εισαγάγετε τον νέο κωδικό πρόσβασής σας",
+            confirmPasswordPlaceholder: "Επιβεβαιώστε τον κωδικό πρόσβασής σας"
         },
         es: {
             welcomeMessage:
@@ -91,7 +134,14 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Registrarse",
             "organization.selectTitle": "Elija su organización",
             "organization.pickPlaceholder": "Elija una organización para continuar",
-            "identity-provider-login-last-used": "Último uso"
+            "identity-provider-login-last-used": "Último uso",
+            usernamePlaceholder: "Ingrese su nombre de usuario",
+            usernameOrEmailPlaceholder:
+                "Ingrese su nombre de usuario o correo electrónico",
+            emailPlaceholder: "Ingrese su correo electrónico",
+            passwordPlaceholder: "Ingrese su contraseña",
+            newPasswordPlaceholder: "Ingrese su nueva contraseña",
+            confirmPasswordPlaceholder: "Confirme su contraseña"
         },
         fa: {
             welcomeMessage:
@@ -102,7 +152,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "ثبت نام",
             "organization.selectTitle": "سازمان خود را انتخاب کنید",
             "organization.pickPlaceholder": "برای ادامه یک سازمان را انتخاب کنید",
-            "identity-provider-login-last-used": "آخرین استفاده"
+            "identity-provider-login-last-used": "آخرین استفاده",
+            usernamePlaceholder: "نام کاربری خود را وارد کنید",
+            usernameOrEmailPlaceholder: "نام کاربری یا ایمیل خود را وارد کنید",
+            emailPlaceholder: "ایمیل خود را وارد کنید",
+            passwordPlaceholder: "رمز عبور خود را وارد کنید",
+            newPasswordPlaceholder: "رمز عبور جدید خود را وارد کنید",
+            confirmPasswordPlaceholder: "رمز عبور خود را تأیید کنید"
         },
         fi: {
             welcomeMessage:
@@ -113,7 +169,14 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Rekisteröidy",
             "organization.selectTitle": "Valitse organisaatiosi",
             "organization.pickPlaceholder": "Valitse organisaatio jatkaaksesi",
-            "identity-provider-login-last-used": "Viimeksi käytetty"
+            "identity-provider-login-last-used": "Viimeksi käytetty",
+            usernamePlaceholder: "Syötä käyttäjätunnuksesi",
+            usernameOrEmailPlaceholder:
+                "Syötä käyttäjätunnuksesi tai sähköpostiosoitteesi",
+            emailPlaceholder: "Syötä sähköpostiosoitteesi",
+            passwordPlaceholder: "Syötä salasanasi",
+            newPasswordPlaceholder: "Syötä uusi salasanasi",
+            confirmPasswordPlaceholder: "Vahvista salasanasi"
         },
         fr: {
             welcomeMessage:
@@ -125,7 +188,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             "organization.selectTitle": "Choisissez Votre Organisation",
             "organization.pickPlaceholder":
                 "Sélectionnez une organisation pour continuer",
-            "identity-provider-login-last-used": "Dernière utilisation"
+            "identity-provider-login-last-used": "Dernière utilisation",
+            usernamePlaceholder: "Entrez votre nom d'utilisateur",
+            usernameOrEmailPlaceholder: "Entrez votre nom d'utilisateur ou votre e-mail",
+            emailPlaceholder: "Entrez votre e-mail",
+            passwordPlaceholder: "Entrez votre mot de passe",
+            newPasswordPlaceholder: "Entrez votre nouveau mot de passe",
+            confirmPasswordPlaceholder: "Confirmez votre mot de passe"
         },
         hu: {
             welcomeMessage:
@@ -136,7 +205,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Regisztráció",
             "organization.selectTitle": "Válassza ki a szervezetét",
             "organization.pickPlaceholder": "A folytatáshoz válasszon egy szervezetet",
-            "identity-provider-login-last-used": "Utoljára használt"
+            "identity-provider-login-last-used": "Utoljára használt",
+            usernamePlaceholder: "Adja meg a felhasználónevét",
+            usernameOrEmailPlaceholder: "Adja meg a felhasználónevét vagy e-mail-címét",
+            emailPlaceholder: "Adja meg az e-mail-címét",
+            passwordPlaceholder: "Adja meg a jelszavát",
+            newPasswordPlaceholder: "Adja meg az új jelszavát",
+            confirmPasswordPlaceholder: "Erősítse meg a jelszavát"
         },
         it: {
             welcomeMessage:
@@ -147,7 +222,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Iscriviti",
             "organization.selectTitle": "Scegli la tua organizzazione",
             "organization.pickPlaceholder": "Scegli un'organizzazione per continuare",
-            "identity-provider-login-last-used": "Ultimo utilizzo"
+            "identity-provider-login-last-used": "Ultimo utilizzo",
+            usernamePlaceholder: "Inserisci il tuo nome utente",
+            usernameOrEmailPlaceholder: "Inserisci il tuo nome utente o la tua email",
+            emailPlaceholder: "Inserisci la tua email",
+            passwordPlaceholder: "Inserisci la tua password",
+            newPasswordPlaceholder: "Inserisci la tua nuova password",
+            confirmPasswordPlaceholder: "Conferma la tua password"
         },
         ja: {
             welcomeMessage:
@@ -158,7 +239,14 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "新規登録",
             "organization.selectTitle": "組織を選択してください",
             "organization.pickPlaceholder": "続行するには組織を選択してください",
-            "identity-provider-login-last-used": "最終使用日"
+            "identity-provider-login-last-used": "最終使用日",
+            usernamePlaceholder: "ユーザー名を入力してください",
+            usernameOrEmailPlaceholder:
+                "ユーザー名またはメールアドレスを入力してください",
+            emailPlaceholder: "メールアドレスを入力してください",
+            passwordPlaceholder: "パスワードを入力してください",
+            newPasswordPlaceholder: "新しいパスワードを入力してください",
+            confirmPasswordPlaceholder: "パスワードを確認してください"
         },
         ka: {
             welcomeMessage:
@@ -169,7 +257,14 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "რეგისტრაცია",
             "organization.selectTitle": "აირჩიეთ თქვენი ორგანიზაცია",
             "organization.pickPlaceholder": "გასაგრძელებლად აირჩიეთ ორგანიზაცია",
-            "identity-provider-login-last-used": "ბოლოს გამოყენებული"
+            "identity-provider-login-last-used": "ბოლოს გამოყენებული",
+            usernamePlaceholder: "შეიყვანეთ თქვენი მომხმარებლის სახელი",
+            usernameOrEmailPlaceholder:
+                "შეიყვანეთ თქვენი მომხმარებლის სახელი ან ელფოსტა",
+            emailPlaceholder: "შეიყვანეთ თქვენი ელფოსტა",
+            passwordPlaceholder: "შეიყვანეთ თქვენი პაროლი",
+            newPasswordPlaceholder: "შეიყვანეთ თქვენი ახალი პაროლი",
+            confirmPasswordPlaceholder: "დაადასტურეთ თქვენი პაროლი"
         },
         lt: {
             welcomeMessage:
@@ -180,7 +275,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Registruotis",
             "organization.selectTitle": "Pasirinkite savo organizaciją",
             "organization.pickPlaceholder": "Norėdami tęsti, pasirinkite organizaciją",
-            "identity-provider-login-last-used": "Paskutinį kartą naudota"
+            "identity-provider-login-last-used": "Paskutinį kartą naudota",
+            usernamePlaceholder: "Įveskite savo vartotojo vardą",
+            usernameOrEmailPlaceholder: "Įveskite savo vartotojo vardą arba el. paštą",
+            emailPlaceholder: "Įveskite savo el. pašto adresą",
+            passwordPlaceholder: "Įveskite savo slaptažodį",
+            newPasswordPlaceholder: "Įveskite naują slaptažodį",
+            confirmPasswordPlaceholder: "Patvirtinkite savo slaptažodį"
         },
         lv: {
             welcomeMessage:
@@ -191,7 +292,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Reģistrēties",
             "organization.selectTitle": "Izvēlieties savu organizāciju",
             "organization.pickPlaceholder": "Izvēlieties organizāciju, lai turpinātu",
-            "identity-provider-login-last-used": "Pēdējo reizi izmantots"
+            "identity-provider-login-last-used": "Pēdējo reizi izmantots",
+            usernamePlaceholder: "Ievadiet savu lietotājvārdu",
+            usernameOrEmailPlaceholder: "Ievadiet savu lietotājvārdu vai e-pastu",
+            emailPlaceholder: "Ievadiet savu e-pastu",
+            passwordPlaceholder: "Ievadiet savu paroli",
+            newPasswordPlaceholder: "Ievadiet savu jauno paroli",
+            confirmPasswordPlaceholder: "Apstipriniet savu paroli"
         },
         nl: {
             welcomeMessage:
@@ -202,7 +309,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Aanmelden",
             "organization.selectTitle": "Kies uw organisatie",
             "organization.pickPlaceholder": "Kies een organisatie om verder te gaan",
-            "identity-provider-login-last-used": "Laatst gebruikt"
+            "identity-provider-login-last-used": "Laatst gebruikt",
+            usernamePlaceholder: "Voer uw gebruikersnaam in",
+            usernameOrEmailPlaceholder: "Voer uw gebruikersnaam of e-mailadres in",
+            emailPlaceholder: "Voer uw e-mailadres in",
+            passwordPlaceholder: "Voer uw wachtwoord in",
+            newPasswordPlaceholder: "Voer uw nieuwe wachtwoord in",
+            confirmPasswordPlaceholder: "Bevestig uw wachtwoord"
         },
         no: {
             welcomeMessage:
@@ -213,7 +326,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Registrer deg",
             "organization.selectTitle": "Velg din organisasjon",
             "organization.pickPlaceholder": "Velg en organisasjon for å fortsette",
-            "identity-provider-login-last-used": "Sist brukt"
+            "identity-provider-login-last-used": "Sist brukt",
+            usernamePlaceholder: "Skriv inn brukernavnet ditt",
+            usernameOrEmailPlaceholder: "Skriv inn brukernavn eller e-post",
+            emailPlaceholder: "Skriv inn e-posten din",
+            passwordPlaceholder: "Skriv inn passordet ditt",
+            newPasswordPlaceholder: "Skriv inn det nye passordet ditt",
+            confirmPasswordPlaceholder: "Bekreft passordet ditt"
         },
         pl: {
             welcomeMessage:
@@ -224,7 +343,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Zarejestruj się",
             "organization.selectTitle": "Wybierz swoją organizację",
             "organization.pickPlaceholder": "Wybierz organizację, aby kontynuować",
-            "identity-provider-login-last-used": "Ostatnio używane"
+            "identity-provider-login-last-used": "Ostatnio używane",
+            usernamePlaceholder: "Wprowadź swoją nazwę użytkownika",
+            usernameOrEmailPlaceholder: "Wprowadź swoją nazwę użytkownika lub e-mail",
+            emailPlaceholder: "Wprowadź swój e-mail",
+            passwordPlaceholder: "Wprowadź swoje hasło",
+            newPasswordPlaceholder: "Wprowadź nowe hasło",
+            confirmPasswordPlaceholder: "Potwierdź swoje hasło"
         },
         pt: {
             welcomeMessage:
@@ -235,7 +360,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Registe-se",
             "organization.selectTitle": "Escolha a sua organização",
             "organization.pickPlaceholder": "Escolha uma organização para continuar",
-            "identity-provider-login-last-used": "Última utilização"
+            "identity-provider-login-last-used": "Última utilização",
+            usernamePlaceholder: "Insira o seu nome de utilizador",
+            usernameOrEmailPlaceholder: "Insira o seu nome de utilizador ou e-mail",
+            emailPlaceholder: "Insira o seu e-mail",
+            passwordPlaceholder: "Insira a sua palavra-passe",
+            newPasswordPlaceholder: "Insira a sua nova palavra-passe",
+            confirmPasswordPlaceholder: "Confirme a sua palavra-passe"
         },
         "pt-BR": {
             welcomeMessage:
@@ -246,7 +377,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Cadastre-se",
             "organization.selectTitle": "Escolha sua organização",
             "organization.pickPlaceholder": "Escolha uma organização para continuar",
-            "identity-provider-login-last-used": "Último uso"
+            "identity-provider-login-last-used": "Último uso",
+            usernamePlaceholder: "Digite seu nome de usuário",
+            usernameOrEmailPlaceholder: "Digite seu nome de usuário ou e-mail",
+            emailPlaceholder: "Digite seu e-mail",
+            passwordPlaceholder: "Digite sua senha",
+            newPasswordPlaceholder: "Digite sua nova senha",
+            confirmPasswordPlaceholder: "Confirme sua senha"
         },
         ru: {
             welcomeMessage:
@@ -257,7 +394,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Зарегистрироваться",
             "organization.selectTitle": "Выберите вашу организацию",
             "organization.pickPlaceholder": "Выберите организацию, чтобы продолжить",
-            "identity-provider-login-last-used": "Последнее использование"
+            "identity-provider-login-last-used": "Последнее использование",
+            usernamePlaceholder: "Введите имя пользователя",
+            usernameOrEmailPlaceholder: "Введите имя пользователя или email",
+            emailPlaceholder: "Введите ваш email",
+            passwordPlaceholder: "Введите пароль",
+            newPasswordPlaceholder: "Введите новый пароль",
+            confirmPasswordPlaceholder: "Подтвердите пароль"
         },
         sk: {
             welcomeMessage:
@@ -268,7 +411,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Zaregistrovať sa",
             "organization.selectTitle": "Vyberte svoju organizáciu",
             "organization.pickPlaceholder": "Pokračujte výberom organizácie",
-            "identity-provider-login-last-used": "Naposledy použité"
+            "identity-provider-login-last-used": "Naposledy použité",
+            usernamePlaceholder: "Zadajte svoje používateľské meno",
+            usernameOrEmailPlaceholder: "Zadajte svoje používateľské meno alebo e-mail",
+            emailPlaceholder: "Zadajte svoj e-mail",
+            passwordPlaceholder: "Zadajte svoje heslo",
+            newPasswordPlaceholder: "Zadajte nové heslo",
+            confirmPasswordPlaceholder: "Potvrďte svoje heslo"
         },
         sv: {
             welcomeMessage:
@@ -278,8 +427,14 @@ const { I18nProvider, useI18n } = i18nBuilder
             noAccount: "Har du inget konto?",
             doRegister: "Registrera dig",
             "organization.selectTitle": "Välj din organisation",
-            "organization.pickPlaceholder": "Välj en organisation för att fortsätta",
-            "identity-provider-login-last-used": "Senast använd"
+            "organization.pickPlaceholder": "Välj en organisation för att fortsättea",
+            "identity-provider-login-last-used": "Senast använd",
+            usernamePlaceholder: "Ange ditt användarnamn",
+            usernameOrEmailPlaceholder: "Ange ditt användarnamn eller e-post",
+            emailPlaceholder: "Ange din e-post",
+            passwordPlaceholder: "Ange ditt lösenord",
+            newPasswordPlaceholder: "Ange ditt nya lösenord",
+            confirmPasswordPlaceholder: "Bekräfta ditt lösenord"
         },
         th: {
             welcomeMessage:
@@ -290,7 +445,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "สมัครสมาชิก",
             "organization.selectTitle": "เลือกองค์กรของคุณ",
             "organization.pickPlaceholder": "เลือกองค์กรเพื่อดำเนินการต่อ",
-            "identity-provider-login-last-used": "ใช้งานล่าสุด"
+            "identity-provider-login-last-used": "ใช้งานล่าสุด",
+            usernamePlaceholder: "กรอกชื่อผู้ใช้ของคุณ",
+            usernameOrEmailPlaceholder: "กรอกชื่อผู้ใช้หรืออีเมลของคุณ",
+            emailPlaceholder: "กรอกอีเมลของคุณ",
+            passwordPlaceholder: "กรอกรหัสผ่านของคุณ",
+            newPasswordPlaceholder: "กรอกรหัสผ่านใหม่ของคุณ",
+            confirmPasswordPlaceholder: "ยืนยันรหัสผ่านของคุณ"
         },
         tr: {
             welcomeMessage:
@@ -301,7 +462,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Kaydol",
             "organization.selectTitle": "Organizasyonunuzu Seçin",
             "organization.pickPlaceholder": "Devam etmek için bir organizasyon seçin",
-            "identity-provider-login-last-used": "Son kullanılan"
+            "identity-provider-login-last-used": "Son kullanılan",
+            usernamePlaceholder: "Kullanıcı adınızı girin",
+            usernameOrEmailPlaceholder: "Kullanıcı adınızı veya e-postanızı girin",
+            emailPlaceholder: "E-postanızı girin",
+            passwordPlaceholder: "Şifrenizi girin",
+            newPasswordPlaceholder: "Yeni şifrenizi girin",
+            confirmPasswordPlaceholder: "Şifrenizi onaylayın"
         },
         uk: {
             welcomeMessage:
@@ -312,7 +479,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "Зареєструватися",
             "organization.selectTitle": "Виберіть свою організацію",
             "organization.pickPlaceholder": "Виберіть організацію, щоб продовжити",
-            "identity-provider-login-last-used": "Останнє використання"
+            "identity-provider-login-last-used": "Останнє використання",
+            usernamePlaceholder: "Введіть ім'я користувача",
+            usernameOrEmailPlaceholder: "Введіть ім'я користувача або email",
+            emailPlaceholder: "Введіть свій email",
+            passwordPlaceholder: "Введіть пароль",
+            newPasswordPlaceholder: "Введіть новий пароль",
+            confirmPasswordPlaceholder: "Підтвердьте пароль"
         },
         "zh-CN": {
             welcomeMessage: "欢迎来到 Acme inc - 开启无缝规划与组织的门户。",
@@ -322,7 +495,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "立即注册",
             "organization.selectTitle": "选择您的组织",
             "organization.pickPlaceholder": "请选择一个组织以继续",
-            "identity-provider-login-last-used": "最近使用"
+            "identity-provider-login-last-used": "最近使用",
+            usernamePlaceholder: "请输入用户名",
+            usernameOrEmailPlaceholder: "请输入用户名或电子邮件",
+            emailPlaceholder: "请输入电子邮件",
+            passwordPlaceholder: "请输入密码",
+            newPasswordPlaceholder: "请输入新密码",
+            confirmPasswordPlaceholder: "请确认密码"
         },
         "zh-TW": {
             welcomeMessage: "歡迎來到 Acme inc - 開啟無縫規劃與組織的門戶。",
@@ -332,7 +511,13 @@ const { I18nProvider, useI18n } = i18nBuilder
             doRegister: "立即註冊",
             "organization.selectTitle": "選擇您的組織",
             "organization.pickPlaceholder": "請選擇一個組織以繼續",
-            "identity-provider-login-last-used": "最近使用"
+            "identity-provider-login-last-used": "最近使用",
+            usernamePlaceholder: "請輸入用戶名稱",
+            usernameOrEmailPlaceholder: "請輸入用戶名稱或電子郵件",
+            emailPlaceholder: "請輸入電子郵件",
+            passwordPlaceholder: "請輸入密碼",
+            newPasswordPlaceholder: "請輸入新密碼",
+            confirmPasswordPlaceholder: "請確認密碼"
         }
     })
     .build();

@@ -10,7 +10,6 @@ A modern, production-ready Keycloak login theme built with React, TypeScript, Ta
 
 - **Modern UI** - Beautiful, responsive design using Tailwind CSS v4 and shadcn/ui components
 - **Dark Mode** - Built-in dark/light/system theme toggle with persistent preferences
-- **Multi-language Support** - i18n ready with English, French, and Arabic translations (RTL supported)
 - **Custom Email Templates** - Styled email templates using jsx-email for all Keycloak events
 - **Complete Login Flow** - All 35+ Keycloak login pages fully customized
 - **Social Login Providers** - Pre-styled icons for 16+ OAuth providers (Google, GitHub, Microsoft, etc.)
@@ -75,7 +74,18 @@ export default defineConfig({
         react(),
         tailwindcss(),
         keycloakify({
-            accountThemeImplementation: "none"
+            accountThemeImplementation: "none",
+            themeName: "your-theme-name",
+            environmentVariables: [
+                { name: "SHADCN_THEME_LOGO_URL", default: "" },
+                { name: "SHADCN_THEME_APP_NAME", default: "Acme Inc." },
+                { name: "SHADCN_THEME_LAYOUT", default: "two-column" },
+                { name: "SHADCN_THEME_SIDE_IMAGE_URL", default: "" },
+                { name: "SHADCN_THEME_PRESET", default: "neutral" },
+                { name: "SHADCN_THEME_BASE", default: "neutral" },
+                { name: "SHADCN_THEME_RADIUS", default: "default" },
+                { name: "SHADCN_THEME_PLACEHOLDER", default: "true" }
+            ]
         })
     ],
     resolve: {

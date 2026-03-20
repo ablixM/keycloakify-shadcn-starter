@@ -21,7 +21,7 @@ export const WithEmailAlreadyExists: Story = {
             profile: {
                 attributesByName: {
                     username: {
-                        value: "johndoe"
+                        value: "johndoe",
                     },
                     email: {
                         value: "jhon.doe@gmail.com"
