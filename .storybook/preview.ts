@@ -180,6 +180,8 @@ const preview: Preview = {
                 context.args.logoDarkUrl ?? DEFAULT_THEME_LOGO_DARK_URL
             );
 
+            const themeSideImageUrl = String(context.args.sideImageUrl ?? "");
+
             const storyArgs = {
                 ...context.args,
                 kcContext: {
@@ -192,6 +194,7 @@ const preview: Preview = {
                         ...context.args.kcContext?.properties,
                         SHADCN_THEME_LOGO_WHITE_URL: logoWhiteUrl,
                         SHADCN_THEME_LOGO_DARK_URL: logoDarkUrl,
+                        SHADCN_THEME_SIDE_IMAGE_URL: themeSideImageUrl,
                         SHADCN_THEME_LAYOUT: layout,
                         SHADCN_THEME_PRESET: themePreset,
                         SHADCN_THEME_BASE: themeBase,

@@ -11,23 +11,12 @@ export function createKcPageStory<PageId extends KcContext["pageId"]>(params: {
 
     function KcPageStory(props: {
         kcContext?: DeepPartial<Extract<KcContext, { pageId: PageId }>>;
-        logoWhiteUrl?: string;
-        logoDarkUrl?: string;
-        sideImageUrl?: string;
     }) {
-        const { kcContext: overrides, logoWhiteUrl, logoDarkUrl, sideImageUrl } = props;
+        const { kcContext: overrides } = props;
 
         const kcContextMock = getKcContextMock({
             pageId,
-            overrides: {
-                ...overrides,
-                properties: {
-                    ...overrides?.properties,
-                    SHADCN_THEME_LOGO_WHITE_URL: logoWhiteUrl,
-                    SHADCN_THEME_LOGO_DARK_URL: logoDarkUrl,
-                    SHADCN_THEME_SIDE_IMAGE_URL: sideImageUrl
-                }
-            }
+            overrides
         });
 
         return <KcPage kcContext={kcContextMock} />;
