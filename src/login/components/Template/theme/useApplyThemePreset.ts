@@ -1,5 +1,5 @@
 import { useKcContext } from "../../../KcContext";
-import { resolveRadiusPreset, resolveThemeTokens } from "./ThemeUtils";
+import { resolveRadiusPreset, resolveThemeFont, resolveThemeTokens } from "./ThemeUtils";
 
 /**
  * Maps semantic theme tokens to the runtime CSS variables consumed by `index.css`.
@@ -87,6 +87,11 @@ export function useApplyThemePreset() {
         theme: theme.dark,
         cssVars: themeCssVars.dark
     });
+
+    document.documentElement.style.setProperty(
+        "--keycloakify-shadcn-font",
+        resolveThemeFont(kcContext.properties.SHADCN_THEME_FONT)
+    );
 
     if (radius) {
         root.style.setProperty("--keycloakify-shadcn-radius", radius);

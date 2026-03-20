@@ -3,3 +3,4 @@ export const DEFAULT_THEME_BASE = "neutral";
 export const DEFAULT_THEME_RADIUS = "default";
 export const DEFAULT_THEME_LAYOUT = "two-column";
 export const DEFAULT_LOCALE = "en";
+export const DEFAULT_FONT = "geist";

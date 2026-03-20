@@ -25,6 +25,7 @@ export default defineConfig({
                 { name: "SHADCN_THEME_PRESET", default: "neutral" },
                 { name: "SHADCN_THEME_BASE", default: "neutral" },
                 { name: "SHADCN_THEME_RADIUS", default: "default" },
+                { name: "SHADCN_THEME_FONT", default: "geist" },
                 { name: "SHADCN_THEME_PLACEHOLDER", default: "true" }
             ],
             postBuild: async buildContext => {

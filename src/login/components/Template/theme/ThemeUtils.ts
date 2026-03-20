@@ -2,9 +2,10 @@ import {
     DEFAULT_THEME_BASE,
     DEFAULT_THEME_PRESET,
     DEFAULT_THEME_RADIUS
-} from "../defaults";
-import { basePalettes, radiusPresets, themePresets } from "./Themes";
+} from "../Defaults";
+import { basePalettes, radiusPresets, themeFontFamilies, themePresets } from "./Themes";
 import {
+    type FontFamily,
     type ModeTokens,
     type ThemeTokens,
     basePaletteOptions,
@@ -66,4 +67,12 @@ export function resolveThemeTokens(params: {
 export function resolveRadiusPreset(value: string): string | undefined {
     const radius = isOption(value, radiusPresetOptions) ? value : DEFAULT_THEME_RADIUS;
     return radiusPresets[radius];
+}
+
+export function resolveThemeFont(value: string | undefined): string {
+    if (value && value in themeFontFamilies) {
+        return themeFontFamilies[value as FontFamily];
+    }
+
+    return themeFontFamilies.inter;
 }

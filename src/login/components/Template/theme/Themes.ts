@@ -471,3 +471,15 @@ export const radiusPresets: Record<RadiusPreset, string | undefined> = {
     medium: "0.625rem",
     large: "0.875rem"
 };
+
+export const themeFontFamilies = {
+    inter: '"Inter Variable", sans-serif',
+    geist: '"Geist Variable", sans-serif',
+    manrope: '"Manrope Variable", sans-serif',
+    figtree: '"Figtree Variable", sans-serif',
+    "source-sans-3": '"Source Sans 3 Variable", sans-serif',
+    "ibm-plex-sans": '"IBM Plex Sans Variable", sans-serif',
+    lora: '"Lora Variable", serif',
+    "playfair-display": '"Playfair Display Variable", serif',
+    "jetbrains-mono": '"JetBrains Mono Variable", monospace'
+} as const;

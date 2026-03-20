@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react-vite";
 import { createElement } from "react";
 import {
+    DEFAULT_FONT,
     DEFAULT_LOCALE,
     DEFAULT_THEME_BASE,
     DEFAULT_THEME_LAYOUT,
@@ -110,6 +111,25 @@ const preview: Preview = {
                 icon: "circlehollow",
                 items: [...radiusPresetOptions]
             }
+        },
+        themeFont: {
+            name: "Font",
+            description: "Theme font preset",
+            defaultValue: "inter",
+            toolbar: {
+                icon: "paragraph",
+                items: [
+                    { value: "inter", title: "Inter" },
+                    { value: "geist", title: "Geist" },
+                    { value: "manrope", title: "Manrope" },
+                    { value: "figtree", title: "Figtree" },
+                    { value: "source-sans-3", title: "Source Sans 3" },
+                    { value: "ibm-plex-sans", title: "IBM Plex Sans" },
+                    { value: "lora", title: "Lora" },
+                    { value: "playfair-display", title: "Playfair Display" },
+                    { value: "jetbrains-mono", title: "JetBrains Mono" }
+                ]
+            }
         }
     },
     decorators: [
@@ -124,6 +144,7 @@ const preview: Preview = {
                 context.globals.themeRadius ?? DEFAULT_THEME_RADIUS
             );
             const showPlaceholder = String(context.globals.showPlaceholder ?? "true");
+            const font = String(context.globals.themeFont ?? DEFAULT_FONT);
 
             const storyArgs = {
                 ...context.args,
@@ -139,14 +160,15 @@ const preview: Preview = {
                         SHADCN_THEME_PRESET: themePreset,
                         SHADCN_THEME_BASE: themeBase,
                         SHADCN_THEME_RADIUS: themeRadius,
-                        SHADCN_THEME_PLACEHOLDER: showPlaceholder
+                        SHADCN_THEME_PLACEHOLDER: showPlaceholder,
+                        SHADCN_THEME_FONT: font
                     }
                 }
             };
 
             return createElement(Story as never, {
                 args: storyArgs,
-                key: `${context.id}-${layout}-${locale}-${themePreset}-${themeBase}-${themeRadius}-${showPlaceholder}`
+                key: `${context.id}-${layout}-${locale}-${themePreset}-${themeBase}-${themeRadius}-${showPlaceholder}-${font}`
             });
         }
     ]

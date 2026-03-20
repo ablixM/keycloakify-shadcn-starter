@@ -89,6 +89,22 @@ export const radiusPresetOptions = [
     "large"
 ] as const;
 
+/**
+ *
+ */
+export const fontFamilyOptions = [
+    "inter",
+    "geist",
+    "manrope",
+    "figtree",
+    "source-sans-3",
+    "ibm-plex-sans",
+    "lora",
+    "playfair-display",
+    "jetbrains-mono"
+] as const;
+
 export type ThemePreset = (typeof themePresetOptions)[number];
 export type BasePalette = (typeof basePaletteOptions)[number];
 export type RadiusPreset = (typeof radiusPresetOptions)[number];
+export type FontFamily = (typeof fontFamilyOptions)[number];
