@@ -27,8 +27,8 @@ importers:
         specifier: ^1.4.2
         version: 1.4.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       keycloakify:
-        specifier: ^11.14.2
-        version: 11.14.2
+        specifier: ^11.15.3
+        version: 11.15.3
       lucide-react:
         specifier: ^0.473.0
         version: 0.473.0(react@19.2.3)
@@ -3568,8 +3568,8 @@ packages:
       react:
         optional: true
 
-  keycloakify@11.14.2:
-    resolution: {integrity: sha512-hiuYdwZMnxykT3APx+5hBocmUQZ5PZbkCibAusUdfO1KbWlGs2I5a/AABKTLFyOy+t6eJeio/jCx9z1xvQbHTg==}
+  keycloakify@11.15.3:
+    resolution: {integrity: sha512-iB8kQELuZ3eqAJsKht3974VZQWss0BydzvELS3uefNKRMZA8ZBq3hsGelL8t3Yt0zZ7wS+Ijavi5VgC9poVcvw==}
     hasBin: true
 
   keyv@4.5.4:
@@ -8514,7 +8514,7 @@ snapshots:
       jsx-email: 2.8.4(@jsx-email/plugin-inline@1.0.1)(@jsx-email/plugin-minify@1.0.2)(@jsx-email/plugin-pretty@1.0.0)(@types/node@22.19.3)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(jiti@2.6.1)(lightningcss@1.32.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)(yaml@2.8.2)
       react: 19.2.3
 
-  keycloakify@11.14.2:
+  keycloakify@11.15.3:
     dependencies:
       tsafe: 1.8.12
 
