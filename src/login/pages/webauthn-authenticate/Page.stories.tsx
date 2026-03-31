@@ -13,6 +13,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
+export const WithTryAnotherWay: Story = {
+    args: {
+        kcContext: {
+            auth: {
+                showTryAnotherWayLink: true
+            }
+        }
+    }
+};
 /**
  * WithMultipleAuthenticators:
  * - Purpose: Tests when multiple WebAuthn authenticators are available for selection.
