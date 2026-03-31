@@ -223,7 +223,7 @@ export function Template(props: {
                                                         value="on"
                                                     />
 
-                                                    <Button type="button" className='w-full' variant="outline" size="icon" asChild>
+                                                    <Button type="button" className='w-full' variant="outline" asChild>
                                                         <a
                                                             href="#"
                                                             id="try-another-way"
