@@ -1,6 +1,6 @@
-import { Button } from '../../../components/ui/button';
-import { Field, FieldError, FieldLabel } from '../../../components/ui/field';
-import { Input } from '../../../components/ui/input';
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import { LogoutOtherSessions } from "@/login/components/LogoutOtherSessions";
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";
@@ -157,7 +157,6 @@ export function Page() {
                                 id="totp"
                                 name="totp"
                                 autoComplete="off"
-                                className="h-12 rounded-md border-2"
                                 aria-invalid={kcContext.messagesPerField.existsError(
                                     "totp"
                                 )}
@@ -199,7 +198,6 @@ export function Page() {
                                 id="userLabel"
                                 name="userLabel"
                                 autoComplete="off"
-                                className="h-12 rounded-md border-2"
                                 aria-invalid={kcContext.messagesPerField.existsError(
                                     "userLabel"
                                 )}
@@ -234,17 +232,17 @@ export function Page() {
                                     id="cancelTOTPBtn"
                                     name="cancel-aia"
                                     type="submit"
-                                    className="flex-1 h-12 rounded-md border-2"
+                                    className="flex-1"
                                 >
                                     {msgStr("doCancel")}
                                 </Button>
-                                <Button id="saveTOTPBtn" type="submit" className="flex-1 h-12 rounded-md border-2">
+                                <Button id="saveTOTPBtn" type="submit" className="flex-1">
                                     {msgStr("doSubmit")}
                                 </Button>
                             </div>
                         </>
                     ) : (
-                        <Button id="saveTOTPBtn" className="w-full h-12 rounded-md border-2" type="submit">
+                        <Button id="saveTOTPBtn" className="w-full" type="submit">
                             {msgStr("doSubmit")}
                         </Button>
                     )}

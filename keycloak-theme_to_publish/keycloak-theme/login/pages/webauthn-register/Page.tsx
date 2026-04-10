@@ -1,4 +1,4 @@
-import { Button } from '../../../components/ui/button';
+import { Button } from "@/components/ui/button";
 import { LogoutOtherSessions } from "@/login/components/LogoutOtherSessions";
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";

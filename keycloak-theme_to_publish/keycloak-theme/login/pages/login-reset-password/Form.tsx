@@ -1,6 +1,6 @@
-import { Button } from '../../../components/ui/button';
-import { Field, FieldError, FieldLabel } from '../../../components/ui/field';
-import { Input } from '../../../components/ui/input';
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import { kcSanitize } from "@keycloakify/login-ui/kcSanitize";
 import { assert } from "tsafe/assert";
 import { useKcContext } from "../../KcContext";
@@ -33,7 +33,6 @@ export function Form() {
                     id="username"
                     name="username"
                     autoFocus
-                    className="h-12 rounded-md border-2"
                     defaultValue={kcContext.auth.attemptedUsername ?? ""}
                     aria-invalid={kcContext.messagesPerField.existsError("username")}
                 />
@@ -52,7 +51,7 @@ export function Form() {
                 )}
             </Field>
 
-            <Button className="w-full h-12 rounded-md border-2" type="submit">
+            <Button className="w-full" type="submit">
                 {msgStr("doSubmit")}
             </Button>
 

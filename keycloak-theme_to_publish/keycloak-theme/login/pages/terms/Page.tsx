@@ -1,4 +1,4 @@
-import { Button } from '../../../components/ui/button';
+import { Button } from "@/components/ui/button";
 import { assert } from "tsafe/assert";
 import { useKcContext } from "../../KcContext";
 import { Template } from "../../components/Template";

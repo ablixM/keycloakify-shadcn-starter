@@ -11,7 +11,7 @@ export default defineConfig({
         react(),
         tailwindcss(),
         keycloakify({
-            accountThemeImplementation: "none",
+            accountThemeImplementation: "Single-Page",
             themeName: "acme-theme",
             keycloakVersionTargets: {
                 "22-to-25": false,

@@ -51,3 +51,6 @@
 /login/resources-common/node_modules/@patternfly/patternfly/assets/fonts/overpass-webfont/overpass-bold.woff2
 /login/resources-common/node_modules/@patternfly/patternfly/assets/fonts/RedHatDisplay/RedHatDisplay-Bold.woff
 /login/resources-common/node_modules/@patternfly/patternfly/assets/fonts/RedHatDisplay/RedHatDisplay-Bold.woff2
+
+# === @keycloakify/keycloak-account-ui v260502.0.2 ===
+/account/early-color-scheme.js

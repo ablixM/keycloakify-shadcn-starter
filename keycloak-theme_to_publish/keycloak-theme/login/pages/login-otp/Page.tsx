@@ -1,8 +1,8 @@
-import { Button } from '../../../components/ui/button';
-import { FieldError } from '../../../components/ui/field';
-import { InputOTP, InputOTPGroup, InputOTPSlot } from '../../../components/ui/input-otp';
-import { Label } from '../../../components/ui/label';
-import { RadioGroup, RadioGroupItem } from '../../../components/ui/radio-group';
+import { Button } from "@/components/ui/button";
+import { FieldError } from "@/components/ui/field";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
@@ -103,7 +103,7 @@ export function Page() {
                 </div>
 
                 <Button
-                    className="w-full h-12 rounded-md border-2"
+                    className="w-full"
                     name="login"
                     id="kc-login"
                     type="submit"

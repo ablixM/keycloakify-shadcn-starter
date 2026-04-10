@@ -1,10 +1,10 @@
-import { Button } from '../../../components/ui/button';
-import { Checkbox } from '../../../components/ui/checkbox';
-import { Input } from '../../../components/ui/input';
-import { Label } from '../../../components/ui/label';
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
-import { Field, FieldError, FieldLabel } from '../../../components/ui/field';
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { WebAuthnConditionalUI } from '@/login/components/WebAuthnConditionalUi';
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";
@@ -84,7 +84,7 @@ export function Page() {
                                     defaultValue={login.username ?? ""}
                                     name="username"
                                     autoFocus
-                                    className="h-12 rounded-md border-2 autofill:bg-background"
+                                    className="autofill:bg-background"
                                     autoComplete={enableWebAuthnConditionalUI ? "username webauthn" : "username"}
                                     aria-invalid={messagesPerField.existsError(
                                         "username"
@@ -128,7 +128,7 @@ export function Page() {
 
                         <Button
                             disabled={isLoginButtonDisabled}
-                            className="w-full h-12 rounded-md border-2"
+                            className="w-full"
                             name="login"
                             type="submit"
                             tabIndex={4}

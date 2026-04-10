@@ -1,7 +1,7 @@
-import { Button } from '../../../components/ui/button';
-import { Field, FieldError, FieldLabel } from '../../../components/ui/field';
-import { InputGroup, InputGroupAddon, InputGroupInput } from '../../../components/ui/input-group';
-import { Label } from '../../../components/ui/label';
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group';
+import { Label } from "@/components/ui/label";
 import { PasswordVisibilityButton } from "@/login/components/PasswordVisibilityButton";
 import { WebAuthnConditionalUI } from '@/login/components/WebAuthnConditionalUi';
 import { useI18n } from "@/login/i18n";
@@ -42,7 +42,6 @@ export function Page() {
                             type="password"
                             id="password"
                             name="password"
-                            className="h-12 rounded-md border-2"
                             autoComplete="current-password"
                             aria-invalid={kcContext.messagesPerField.existsError(
                                 "password"
@@ -84,7 +83,7 @@ export function Page() {
                 <div className="flex justify-end ">
                     <Button
                         disabled={isLoginButtonDisabled}
-                        className="w-full h-12 rounded-md border-2"
+                        className="w-full"
                         name="login"
                         type="submit"
                         tabIndex={4}

@@ -5,7 +5,7 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue
-} from '../../../components/ui/select';
+} from "@/components/ui/select";
 import { assert } from "tsafe/assert";
 import type { InputFieldByTypeProps } from "./InputFieldByType";
 import { InputLabel } from "./InputLabel";
@@ -50,7 +50,7 @@ export function SelectTag(props: InputFieldByTypeProps) {
                 id={attribute.name}
                 name={attribute.name}
                 className={cn(
-                    "flex min-h-25 h-auto w-full items-center justify-between rounded-md border-2 bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+                    "flex min-h-25 h-auto w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
                     displayableErrors.length !== 0 &&
                         "border-destructive ring-destructive/20 focus:ring-destructive"
                 )}
@@ -108,7 +108,7 @@ export function SelectTag(props: InputFieldByTypeProps) {
             <SelectTrigger
                 id={attribute.name}
                 className={cn(
-                    "w-full h-12 rounded-md border-2",
+                    "w-full",
                     displayableErrors.length !== 0 &&
                         "border-destructive ring-destructive/20 focus-visible:ring-destructive"
                 )}

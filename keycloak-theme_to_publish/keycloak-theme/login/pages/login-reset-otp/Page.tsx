@@ -1,6 +1,6 @@
-import { Button } from '../../../components/ui/button';
-import { Label } from '../../../components/ui/label';
-import { RadioGroup, RadioGroupItem } from '../../../components/ui/radio-group';
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";
 import { useKcClsx } from "@keycloakify/login-ui/useKcClsx";
@@ -70,7 +70,7 @@ export function Page() {
                         >
                             <Button
                                 id="kc-otp-reset-form-submit"
-                                className="w-full h-12 rounded-md border-2"
+                                className={"w-full"}
                                 type="submit"
                             >
                                 {msgStr("doSubmit")}

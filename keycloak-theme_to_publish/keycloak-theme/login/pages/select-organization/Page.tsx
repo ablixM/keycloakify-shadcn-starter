@@ -1,11 +1,11 @@
-import { Button } from '../../../components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue
-} from '../../../components/ui/select';
+} from "@/components/ui/select";
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";
 import { Building2 } from "lucide-react";

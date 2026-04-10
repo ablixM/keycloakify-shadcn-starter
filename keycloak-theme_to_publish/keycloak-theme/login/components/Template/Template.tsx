@@ -1,9 +1,9 @@
-import { Alert, AlertDescription } from '../../../components/ui/alert';
-import { Button } from '../../../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../../../components/ui/tooltip';
-import { ModeToggle } from "../../../login/components/ui/ThemeToggle";
-import { redirectUrlOrigin } from "../../../login/shared/redirectUrlOrigin";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { ModeToggle } from "@/login/components/ui/ThemeToggle";
+import { redirectUrlOrigin } from "@/login/shared/redirectUrlOrigin";
 import { kcSanitize } from "@keycloakify/login-ui/kcSanitize";
 import { useKcClsx } from "@keycloakify/login-ui/useKcClsx";
 import { useSetClassName } from "keycloakify/tools/useSetClassName";
@@ -14,7 +14,8 @@ import { FiHome } from "react-icons/fi";
 import { useI18n } from "../../i18n";
 import { useKcContext } from "../../KcContext";
 import { Languages } from '../ui/Langauges';
-import companylogo from "../../assets/img/auth-logo.png";
+import companylogo from "./../../assets/img/auth-logo.svg";
+import shape from "./../../assets/img/shape.svg";
 import { useInitializeTemplate } from "./useInitializeTemplate";
 
 const APP_NAME = "Acme Inc.";
@@ -69,173 +70,206 @@ export function Template(props: {
     useInitializeTemplate();
 
     return (
-        <div className="flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
-            {/* navigation */}
-            <div className="absolute top-4 right-4 z-20 flex gap-2">
-                <Button type="button" variant="outline" size="icon" asChild title={APP_NAME}>
-                    <a href={kcContext.client?.baseUrl ?? redirectUrlOrigin}>
-                        <FiHome />
-                    </a>
-                </Button>
+        <div className="grid min-h-svh lg:grid-cols-2 ">
+            {/* Main content */}
+            <div className="flex flex-col gap-4 px-0 py-0 pb-6 lg:p-6 lg:md:p-10 lg:pt-10 min-h-screen lg:min-h-0">
+                {/*  navigation */}
+                <div className="absolute top-4 inset-s-4 z-20 flex gap-2">
+                    <Button type="button" variant="outline" size="icon" asChild>
+                        <a href={kcContext.client?.baseUrl ?? redirectUrlOrigin}>
+                            <FiHome />
+                        </a>
+                    </Button>
 
-                {kcContext.darkMode !== false && <ModeToggle />}
+                    {kcContext.darkMode !== false && <ModeToggle />}
 
-                {enabledLanguages.length > 1 && <Languages />}
-            </div>
-
-            <div className="w-full max-w-md flex flex-col gap-6">
-                <div className="flex flex-col items-center gap-2">
-                    <div className="flex items-center gap-3 font-medium">
-                        <img src={companylogo} alt="Logo" className="size-10" />
-                        {/* <span className="text-xl font-bold tracking-tight">{APP_NAME}</span> */}
-                    </div>
+                    {enabledLanguages.length > 1 && <Languages />}
                 </div>
 
-                <Card className="shadow-none sm:shadow-sm border-0 sm:border bg-transparent sm:bg-card rounded-t-2xl">
-                    <CardHeader>
-                        <CardTitle>
-                            {(() => {
-                                const node = !(
-                                    auth !== undefined &&
-                                    auth.showUsername &&
-                                    !auth.showResetCredentials
-                                ) ? (
-                                    <h1 className="text-xl tracking-tight">{headerNode}</h1>
-                                ) : (
-                                    <div
-                                        id="kc-username"
-                                        className="flex items-center justify-between gap-2"
-                                    >
-                                        <div className="flex gap-4 items-center">
-                                            <User className="text-muted-foreground size-6" />
 
-                                            <div className="flex flex-col gap-0.5 text-left">
-                                                <span className="text-xs font-normal text-muted-foreground">
-                                                    {msgStr("attemptedUsernameLoggingInAs")}
-                                                </span>
-                                                <label
-                                                    className="font-semibold text-lg"
-                                                    id="kc-attempted-username"
-                                                >
-                                                    {auth.attemptedUsername}
-                                                </label>
+
+                <div className="flex flex-1 items-start lg:items-center justify-center flex-col ">
+                    <div className="w-full max-w-xl">
+
+                        <Card className="shadow-none bg-transparent lg:bg-card border-0 lg:rounded-lg lg:border lg:shadow-sm rounded-t-2xl">
+                            <CardHeader>
+                                <CardTitle>
+                                    {/* Mobile header with logo */}
+                                    <div className="lg:hidden relative mt-8">
+                                        <div className="flex flex-col items-center justify-center gap-3">
+                                            <div className="mb-4 flex items-center gap-3">
+                                                <img src={companylogo} alt="Logo" />
+                                                <span className="text-xl"> {APP_NAME}</span>
                                             </div>
                                         </div>
-
-                                        <TooltipProvider>
-                                            <Tooltip>
-                                                <TooltipTrigger asChild>
-                                                    <Button
-                                                        variant="outline"
-                                                        size="icon"
-                                                        asChild
-                                                    >
-                                                        <a
-                                                            id="reset-login"
-                                                            href={
-                                                                url.loginRestartFlowUrl
-                                                            }
-                                                            aria-label={msgStr(
-                                                                "restartLoginTooltip"
-                                                            )}
-                                                        >
-                                                            <RotateCcw className="size-4" />
-                                                        </a>
-                                                    </Button>
-                                                </TooltipTrigger>
-                                                <TooltipContent>
-                                                    <p>
-                                                        {msg(
-                                                            "restartLoginTooltip"
-                                                        )}
-                                                    </p>
-                                                </TooltipContent>
-                                            </Tooltip>
-                                        </TooltipProvider>
                                     </div>
-                                );
-
-                                if (displayRequiredFields) {
-                                    return (
-                                        <div className="flex items-center justify-between gap-2">
-                                            <div>{node}</div>
-                                            <div>
-                                                <span className="subtitle">
-                                                    <span className="text-red-500">
-                                                        *
-                                                    </span>
-                                                    {msg("requiredFields")}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    );
-                                }
-
-                                return node;
-                            })()}
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div id="kc-content" className="space-y-4">
-                            {displayMessage &&
-                                message !== undefined &&
-                                (message.type !== "warning" ||
-                                    !isAppInitiatedAction) && (
-                                    <Alert variant={message.type}>
-                                        <AlertDescription>
-                                            <span
-                                                dangerouslySetInnerHTML={{
-                                                    __html: kcSanitize(
-                                                        message.summary
-                                                    )
-                                                }}
-                                            />
-                                        </AlertDescription>
-                                    </Alert>
-                                )}
-                            {socialProvidersNode}
-                            {children}
-                            {auth !== undefined &&
-                                auth.showTryAnotherWayLink && (
-                                    <form
-                                        id="kc-select-try-another-way-form"
-                                        action={url.loginAction}
-                                        method="post"
-                                    >
-                                        <div
-                                            className={kcClsx(
-                                                "kcFormGroupClass"
-                                            )}
-                                        >
-                                            <input
-                                                type="hidden"
-                                                name="tryAnotherWay"
-                                                value="on"
-                                            />
-                                            <a
-                                                href="#"
-                                                id="try-another-way"
-                                                onClick={event => {
-                                                    document.forms[
-                                                        "kc-select-try-another-way-form" as never
-                                                    ].submit();
-                                                    event.preventDefault();
-                                                    return false;
-                                                }}
+                                    {(() => {
+                                        const node = !(
+                                            auth !== undefined &&
+                                            auth.showUsername &&
+                                            !auth.showResetCredentials
+                                        ) ? (
+                                            <h1 className="text-xl">{headerNode}</h1>
+                                        ) : (
+                                            <div
+                                                id="kc-username"
+                                                className="flex items-center justify-between gap-2"
                                             >
-                                                {msg("doTryAnotherWay")}
-                                            </a>
+                                                <div className="flex gap-4 items-center">
+                                                    <User className="text-muted-foreground size-6" />
+
+                                                    <div className="flex flex-col gap-0.5">
+                                                        <span className="text-xs font-normal text-muted-foreground">
+                                                            {msgStr("attemptedUsernameLoggingInAs")}
+                                                        </span>
+                                                        <label
+                                                            className="font-semibold text-lg"
+                                                            id="kc-attempted-username"
+                                                        >
+                                                            {auth.attemptedUsername}
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <TooltipProvider>
+                                                    <Tooltip>
+                                                        <TooltipTrigger asChild>
+                                                            <Button
+                                                                variant="outline"
+                                                                size="icon"
+                                                                asChild
+                                                            >
+                                                                <a
+                                                                    id="reset-login"
+                                                                    href={
+                                                                        url.loginRestartFlowUrl
+                                                                    }
+                                                                    aria-label={msgStr(
+                                                                        "restartLoginTooltip"
+                                                                    )}
+                                                                >
+                                                                    <RotateCcw className="size-4" />
+                                                                </a>
+                                                            </Button>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent>
+                                                            <p>
+                                                                {msg(
+                                                                    "restartLoginTooltip"
+                                                                )}
+                                                            </p>
+                                                        </TooltipContent>
+                                                    </Tooltip>
+                                                </TooltipProvider>
+                                            </div>
+                                        );
+
+                                        if (displayRequiredFields) {
+                                            return (
+                                                <div className="flex items-center justify-between gap-2">
+                                                    <div>{node}</div>
+                                                    <div>
+                                                        <span className="subtitle">
+                                                            <span className="text-red-500">
+                                                                *
+                                                            </span>
+                                                            {msg("requiredFields")}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            );
+                                        }
+
+                                        return node;
+                                    })()}
+                                </CardTitle>
+
+                            </CardHeader>
+                            <CardContent>
+                                <div id="kc-content" className="space-y-4">
+                                    {displayMessage &&
+                                        message !== undefined &&
+                                        (message.type !== "warning" ||
+                                            !isAppInitiatedAction) && (
+                                            <Alert variant={message.type}>
+                                                <AlertDescription>
+                                                    <span
+                                                        dangerouslySetInnerHTML={{
+                                                            __html: kcSanitize(
+                                                                message.summary
+                                                            )
+                                                        }}
+                                                    />
+                                                </AlertDescription>
+                                            </Alert>
+                                        )}
+                                    {socialProvidersNode}
+                                    {children}
+                                    {auth !== undefined &&
+                                        auth.showTryAnotherWayLink && (
+                                            <form
+                                                id="kc-select-try-another-way-form"
+                                                action={url.loginAction}
+                                                method="post"
+                                            >
+                                                <div
+                                                    className={kcClsx(
+                                                        "kcFormGroupClass"
+                                                    )}
+                                                >
+                                                    <input
+                                                        type="hidden"
+                                                        name="tryAnotherWay"
+                                                        value="on"
+                                                    />
+                                                    <a
+                                                        href="#"
+                                                        id="try-another-way"
+                                                        onClick={event => {
+                                                            document.forms[
+                                                                "kc-select-try-another-way-form" as never
+                                                            ].submit();
+                                                            event.preventDefault();
+                                                            return false;
+                                                        }}
+                                                    >
+                                                        {msg("doTryAnotherWay")}
+                                                    </a>
+                                                </div>
+                                            </form>
+                                        )}
+                                    {displayInfo && (
+                                        <div className="text-center text-sm">
+                                            {infoNode}
                                         </div>
-                                    </form>
-                                )}
-                            {displayInfo && (
-                                <div className="text-center text-sm">
-                                    {infoNode}
+                                    )}
                                 </div>
-                            )}
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+
+            <div className="bg-primary relative hidden lg:block dark:bg-white/5">
+                <div className="flex items-center pt-20 h-full justify-center z-1">
+                    <div className="absolute right-0 top-0 w-full max-w-62.5 xl:max-w-112.5">
+                        <img src={shape} alt="grid" />
+                    </div>
+                    <div className="absolute bottom-0 left-0 w-full max-w-62.5 rotate-180 xl:max-w-112.5">
+                        <img src={shape} alt="grid" />
+                    </div>
+
+                    <div className="flex justify-center my-auto flex-col items-center max-w-xs">
+                        <div className="mb-4 flex items-center gap-3">
+                            <img src={companylogo} alt="Logo" />
+                            <span className="text-white text-xl"> {APP_NAME}</span>
                         </div>
-                    </CardContent>
-                </Card>
+
+                        <p className="text-center  text-gray-400 ">
+                            {msg("welcomeMessage")}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     );

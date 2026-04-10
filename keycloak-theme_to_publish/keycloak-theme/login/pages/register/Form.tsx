@@ -1,4 +1,4 @@
-import { Button } from '../../../components/ui/button';
+import { Button } from "@/components/ui/button";
 import { clsx } from "@keycloakify/login-ui/tools/clsx";
 import { useKcClsx } from "@keycloakify/login-ui/useKcClsx";
 import { useLayoutEffect, useState } from "react";
@@ -88,7 +88,7 @@ export function Form() {
                             !isFormSubmittable ||
                             (kcContext.termsAcceptanceRequired && !areTermsAccepted)
                         }
-                        className="w-full mt-2 h-12 rounded-md border-2"
+                        className="w-full mt-2"
                         name="register"
                         type="submit"
                     >

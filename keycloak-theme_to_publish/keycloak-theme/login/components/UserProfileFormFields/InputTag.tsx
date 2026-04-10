@@ -1,5 +1,5 @@
-import { Input } from '../../../components/ui/input';
-import { InputGroupInput } from '../../../components/ui/input-group';
+import { Input } from "@/components/ui/input";
+import { InputGroupInput } from '@/components/ui/input-group';
 import { assert } from "tsafe/assert";
 import { useI18n } from "../../i18n";
 import { AddRemoveButtonsMultiValuedAttribute } from "./AddRemoveButtonsMultiValuedAttribute";
@@ -78,7 +78,6 @@ export function InputTag(
                         ([key, value]) => [`data-${key}`, value]
                     )
                 )}
-                className="h-12 rounded-md "
                 onChange={event =>
                     dispatchFormAction({
                         action: "update",

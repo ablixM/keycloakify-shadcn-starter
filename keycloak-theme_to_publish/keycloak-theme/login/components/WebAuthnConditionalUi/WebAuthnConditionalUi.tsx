@@ -1,4 +1,4 @@
-import { Button } from '../../../components/ui/button';
+import { Button } from "@/components/ui/button";
 import { Fingerprint } from "lucide-react";
 import { assert } from "tsafe/assert";
 import { useI18n } from '../../i18n';

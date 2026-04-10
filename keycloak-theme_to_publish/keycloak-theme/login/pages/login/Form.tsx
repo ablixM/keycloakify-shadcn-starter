@@ -1,12 +1,10 @@
-import { Button } from '../../../components/ui/button';
-import { Checkbox } from '../../../components/ui/checkbox';
-import { Field, FieldError, FieldLabel } from '../../../components/ui/field';
-import { Input } from '../../../components/ui/input';
-import { InputGroup, InputGroupAddon, InputGroupInput } from '../../../components/ui/input-group';
-import { Alert, AlertDescription } from '../../../components/ui/alert';
-import { Label } from '../../../components/ui/label';
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group';
+import { Label } from "@/components/ui/label";
 import { WebAuthnConditionalUI } from '@/login/components/WebAuthnConditionalUi';
-import { Fingerprint } from "lucide-react";
 import { useKcContext } from "@/login/KcContext";
 import { kcSanitize } from "@keycloakify/login-ui/kcSanitize";
 import { useKcClsx } from "@keycloakify/login-ui/useKcClsx";
@@ -26,17 +24,6 @@ export function Form() {
 
     const { kcClsx } = useKcClsx();
 
-    const hasCredentialError = kcContext.messagesPerField.existsError(
-        "username",
-        "password",
-    );
-
-    const credentialErrorMessage = hasCredentialError
-        ? kcContext.messagesPerField.getFirstError("username", "password")
-        : undefined;
-
-    const webAuthnButtonId = "authenticateWebAuthnButton";
-
     return (
         <>
             <div id="kc-form">
@@ -50,21 +37,8 @@ export function Form() {
                             }}
                             action={kcContext.url.loginAction}
                             method="post"
-                            className="space-y-3"
+                            className="space-y-4"
                         >
-                            {hasCredentialError && credentialErrorMessage && (
-                                <Alert variant="error" className="my-3">
-                                    <AlertDescription>
-                                        <span
-                                            id="credential-error"
-                                            aria-live="polite"
-                                            dangerouslySetInnerHTML={{
-                                                __html: kcSanitize(credentialErrorMessage),
-                                            }}
-                                        />
-                                    </AlertDescription>
-                                </Alert>
-                            )}
                             {!kcContext.usernameHidden && (
                                 <Field>
                                     <FieldLabel htmlFor="username">
@@ -78,7 +52,6 @@ export function Form() {
                                         tabIndex={2}
                                         type="text"
                                         id="username"
-                                        className="h-12 rounded-md "
                                         defaultValue={kcContext.login.username ?? ""}
                                         name="username"
                                         autoFocus
@@ -116,7 +89,6 @@ export function Form() {
                                 </FieldLabel>
                                 <InputGroup>
                                     <InputGroupInput
-                                        className="h-12 rounded-md"
                                         tabIndex={3}
                                         type="password"
                                         id="password"
@@ -153,7 +125,7 @@ export function Form() {
                                     )}
                             </Field>
 
-                            <div className=" space-y-1 my-3 flex justify-between text-xs ">
+                            <div className="space-y-1 flex justify-between text-xs">
                                 {kcContext.realm.rememberMe &&
                                     !kcContext.usernameHidden && (
                                         <div className="flex items-center space-x-2 ">
@@ -200,39 +172,24 @@ export function Form() {
                                     value={kcContext.auth.selectedCredential}
                                 />
 
-                                <div className="flex justify-center max-w-xs mx-auto">
-                                    <Button
-                                        disabled={isLoginButtonDisabled}
-                                        className="w-full mx-auto h-12 rounded-md border-2"
-                                        tabIndex={7}
-                                        name="login"
-                                        id="kc-login"
-                                        type="submit"
-                                        value={msgStr("doLogIn")}
-                                    >
-                                        {msgStr("doLogIn")}
-                                    </Button>
-                                </div>
+                                <Button
+                                    disabled={isLoginButtonDisabled}
+                                    className="w-full"
+                                    tabIndex={7}
+                                    name="login"
+                                    id="kc-login"
+                                    type="submit"
+                                    value={msgStr("doLogIn")}
+                                >
+                                    {msgStr("doLogIn")}
+                                </Button>
                             </div>
                         </form>
                     )}
                 </div>
             </div>
 
-            {kcContext.enableWebAuthnConditionalUI && (
-                <>
-                    <WebAuthnConditionalUI />
-                    <Button
-                        id={webAuthnButtonId}
-                        type="button"
-                        className="w-full"
-                        variant="outline"
-                    >
-                        <Fingerprint className="w-4 h-4" />
-                        {msgStr("passkey-doAuthenticate")}
-                    </Button>
-                </>
-            )}
+            {kcContext.enableWebAuthnConditionalUI && <WebAuthnConditionalUI />}
         </>
     );
 }

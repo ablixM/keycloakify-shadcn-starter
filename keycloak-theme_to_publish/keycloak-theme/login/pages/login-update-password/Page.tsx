@@ -1,6 +1,6 @@
-import { Button } from '../../../components/ui/button';
-import { Field, FieldError, FieldLabel } from '../../../components/ui/field';
-import { InputGroup, InputGroupAddon, InputGroupInput } from '../../../components/ui/input-group';
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group';
 import { LogoutOtherSessions } from "@/login/components/LogoutOtherSessions";
 import { PasswordVisibilityButton } from "@/login/components/PasswordVisibilityButton";
 import { useI18n } from "@/login/i18n";
@@ -35,7 +35,6 @@ export function Page() {
                             type="password"
                             id="password-new"
                             name="password-new"
-                            className="h-12 rounded-md border-2"
                             autoFocus
                             autoComplete="new-password"
                             aria-invalid={messagesPerField.existsError("password")}
@@ -68,7 +67,6 @@ export function Page() {
                             type="password"
                             id="password-confirm"
                             name="password-confirm"
-                            className="h-12 rounded-md border-2"
                             autoComplete="new-password"
                             aria-invalid={messagesPerField.existsError(
                                 "password-confirm"
@@ -96,13 +94,13 @@ export function Page() {
                 <LogoutOtherSessions />
 
                 <div className="space-y-3">
-                    <Button className="w-full h-12 rounded-md border-2" type="submit">
+                    <Button className="w-full" type="submit">
                         {msgStr("doSubmit")}
                     </Button>
                     {isAppInitiatedAction && (
                         <Button
                             variant="outline"
-                            className="w-full h-12 rounded-md border-2"
+                            className="w-full"
                             type="submit"
                             name="cancel-aia"
                             value="true"

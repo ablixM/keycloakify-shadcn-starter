@@ -1,5 +1,5 @@
-import { Alert, AlertDescription } from '../../../components/ui/alert';
-import { Button } from '../../../components/ui/button';
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import { kcSanitize } from "@keycloakify/login-ui/kcSanitize";
 import { assert } from "tsafe/assert";
 import { useKcContext } from "../../KcContext";
@@ -28,7 +28,7 @@ export function Page() {
 
                 {!kcContext.skipLink && !!kcContext.client?.baseUrl && (
                     <div className="flex justify-end">
-                        <Button type="button" className="h-12 rounded-md border-2">
+                        <Button type="button">
                             <a id="backToApplication" href={kcContext.client.baseUrl}>
                                 {msg("backToApplication")}
                             </a>

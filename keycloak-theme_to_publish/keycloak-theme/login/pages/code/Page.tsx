@@ -1,22 +1,12 @@
-/**
- * This file has been claimed for ownership from @oussemasahbeni/keycloakify-login-shadcn version 250004.0.15.
- * To relinquish ownership and restore this file to its original content, run the following command:
- *
- * $ npx keycloakify own --path "login/pages/code/Page.tsx" --revert
- */
-
-import { Alert, AlertDescription } from '../../../components/ui/alert';
-import { Input } from '../../../components/ui/input';
-import { kcSanitize } from "keycloakify/lib/kcSanitize";
-
-import { Button } from '../../../components/ui/button';
-
-import { MdContentCopy } from "react-icons/md";
-
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from '@/components/ui/button';
+import { Field, FieldLabel } from '@/components/ui/field';
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group';
 import { useI18n } from "@/login/i18n";
 import { useKcContext } from "@/login/KcContext";
+import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import { useState } from "react";
-import { MdCheck } from "react-icons/md";
+import { MdCheck, MdContentCopy } from 'react-icons/md';
 import { assert } from "tsafe/assert";
 import { Template } from "../../components/Template";
 
@@ -49,36 +39,39 @@ export function Page() {
             <div id="kc-code">
                 {kcContext.code.success ? (
                     <>
-                        <Alert variant="success" className=" my-3">
-                            <AlertDescription>
-                                <span>{msg("copyCodeInstruction")}</span>
-                            </AlertDescription>
-                        </Alert>
-                        <div className="relative">
-                            <Input
-                                id="code"
-                                defaultValue={kcContext.code.code}
-                                readOnly
-                                className="font-mono"
-                            />
+                        <Field>
+                            <FieldLabel htmlFor="code">
+                                {msg("copyCodeInstruction")}
+                            </FieldLabel>
+                            <InputGroup>
+                                <InputGroupInput
+                                    id="code"
+                                    defaultValue={kcContext.code.code}
+                                    readOnly
+                                    className="font-mono"
+                                />
+                                <InputGroupAddon align="inline-end" >
+                                    <Button
+                                        onClick={handleCopy}
+                                        variant="secondary"
+                                        size="icon"
+                                        className="size-4"
+                                        aria-label="Copy code to clipboard"
+                                    >
+                                        {copied ? (
+                                            <MdCheck className="text-green-500" />
+                                        ) : (
+                                            <MdContentCopy />
+                                        )}
+                                    </Button>
+                                </InputGroupAddon>
+                            </InputGroup>
+                        </Field>
 
-                            <Button
-                                onClick={handleCopy}
-                                variant="secondary"
-                                size="icon"
-                                className="size-4 absolute end-2 top-1/2 transform -translate-y-1/2"
-                            >
-                                {copied ? (
-                                    <MdCheck className="text-green-500" />
-                                ) : (
-                                    <MdContentCopy />
-                                )}
-                            </Button>
-                        </div>
                     </>
                 ) : (
                     kcContext.code.error && (
-                        <Alert variant="error" className="my-3">
+                        <Alert variant="error">
                             <AlertDescription>
                                 <p
                                     id="error"
@@ -91,6 +84,6 @@ export function Page() {
                     )
                 )}
             </div>
-        </Template>
+        </Template >
     );
 }

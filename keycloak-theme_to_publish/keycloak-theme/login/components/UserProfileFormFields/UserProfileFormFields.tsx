@@ -1,4 +1,4 @@
-import { Field, FieldDescription, FieldLabel } from '../../../components/ui/field';
+import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
 import type { Attribute } from "@keycloakify/login-ui/KcContext";
 import type { JSX } from "@keycloakify/login-ui/tools/JSX";
 import {
