@@ -6,7 +6,6 @@ import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals";
 import js from "@eslint/js";
 import storybook from "eslint-plugin-storybook";
-
 export default typescriptEslint.config(
     js.configs.recommended,
     ...typescriptEslint.configs.recommended,
@@ -35,7 +34,9 @@ export default typescriptEslint.config(
         rules: {
             "react-refresh/only-export-components": [
                 "warn",
-                { allowConstantExport: true }
+                {
+                    allowConstantExport: true
+                }
             ],
             "react-hooks/exhaustive-deps": "off",
             "@typescript-eslint/no-redeclare": "off",
@@ -46,6 +47,11 @@ export default typescriptEslint.config(
         files: ["**/*.stories.*"],
         rules: {
             "import/no-anonymous-default-export": "off"
+        }
+    },
+    {
+        linterOptions: {
+            reportUnusedDisableDirectives: "off"
         }
     }
 );
